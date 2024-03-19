@@ -2,9 +2,9 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Saksham Jain # the website title (if blank, full name will be used instead)
+title: # the website title (if blank, full name will be used instead)
 first_name: Saksham
-middle_name:
+middle_name: # K.
 last_name: Jain
 email: sj305@uw.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
