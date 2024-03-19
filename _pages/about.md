@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Statistics</a>. Pursuing PhD in Statistics | 
+subtitle: <a href='#'>Statistics</a>. Pursuing PhD in Statistics | MS ECE
 
 profile:
   align: right
