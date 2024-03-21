@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2024-01-18 16:25:00-0400
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+Our paper "Evaluating Pre-Trial Programs Using Interpretable Machine Learning Matching Algorithms for Causal Inference" is selected as an <span style="color: red;">**oral**</span> at AAAI-24!
