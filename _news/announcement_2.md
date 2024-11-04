@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[Bachelor's thesis](https://link.springer.com/article/10.1007/s10845-020-01710-x), published in the Journal Intelligent Manufacturing, crosses `100 citations`!
+[Bachelor's thesis](https://link.springer.com/article/10.1007/s10845-020-01710-x) published in the Journal Intelligent Manufacturing crosses `100 citations`
