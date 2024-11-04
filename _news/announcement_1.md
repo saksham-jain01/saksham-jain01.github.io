@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Received the Coursera Department Fellowship for outstanding promise for graduate work at UW Seattle
+Awarded the Coursera Department Fellowship for outstanding promise for graduate work at UW Seattle.
