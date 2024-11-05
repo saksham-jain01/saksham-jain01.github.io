@@ -26,21 +26,21 @@
       year: 2022
       description:
         - Evaluating pre-trial programs using interpretable ML matching methods for causal inference. (Master's Project)
-        - Closing the domain gap, blended synthetic imagery for climate object detection
+        - Closing the domain gap - blended synthetic imagery for climate object detection.
     - title: Bachelor of Engineering, Robotics and Automation
       institution: University of Delhi, India
       year: 2019
       description:
-        - Synthetic data augmentation for surface defect detection and classification using deep learning (Bachelor's Thesis)
+        - Synthetic data augmentation for surface defect detection and classification using deep learning. (Bachelor's Thesis)
 
 - title: (Select) Experience
   type: time_table
   contents:
     - title: Applied Scientist II Intern
       institution: Amazon Science
-      year: Jun 2024 - Sep 2024
+      year: Jun'24 - Sep'24
       description:
-        - LLMs for time-series forecasting
+        - LLMs for demand forecasting
         # - Description 2.
         # - title: Description 3.
         #   contents:
@@ -48,14 +48,14 @@
         #     - Sub-description 2.
     - title: Research Assistant
       institution: Indian Institute of Science Bangalore
-      year: Jan 2020 - Aug 2020
+      year: Jan'20 - Aug'20
       description:
         - Training-data-free distillation
         - Smart super-resolution for sattelite imagery
 
     - title: Machine Learning Engineer
       institution: Million Sparks Foundation
-      year: Jun 2019 - Jan 2020
+      year: Jun'19 - Jan'20
       description:
         - Recommendation systems
 
