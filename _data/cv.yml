@@ -13,10 +13,10 @@
   contents:
     - title: PhD, Statistics
       institution: University of Washington-Seattle, USA
-      year: 2026 (Expected)
+      year: 2027 (Expected)
       description:
-        - One-step estimation and inference for conditional distributional kernel treatment effect.  (Working Paper)
-        - A-optimal design of instruments for indirect experimentation. (Working Paper)
+        - One-step estimation and inference for conditional distributional kernel treatment effects.  (Working Paper)
+        - A-optimal design of instruments for indirect online experimentation. (Working Paper)
         # - title: Description 3.
         #   contents:
         #     - Sub-description 1.
@@ -27,7 +27,7 @@
       description:
         - Evaluating pre-trial programs using interpretable ML matching methods for causal inference. (Master's Project)
         - Closing the domain gap - blended synthetic imagery for climate object detection.
-    - title: Bachelor of Engineering, Robotics and Automation
+    - title: Bachelor of Engineering, Automation
       institution: University of Delhi, India
       year: 2019
       description:
