@@ -3,14 +3,20 @@ layout: page
 permalink: /teaching/
 title: teaching
 description: Materials for courses you taught. Replace this text with your description.
-nav: false
-nav_order: 6
+nav: true
+nav_order: 3
 ---
 
-As TA:-
+### University of Washington
+\* Teaching Assistant: CSE 416 - Introduction to Machine Learning (Spring 2025)
+\* Teaching Assistant: CSE 416 - Introduction to Machine Learning (Winter 2025)
+\* Teaching Assistant: STAT 451 - Visualizing Data (Autumn 2024)
+\* STAT 390: Statistical Methods in Engineering and Science (Winter 2024)
+\* CSE 416: Introduction to Machine Learning (Autumn 2023)
+\* STAT 435: Introduction to Statistical Machine Learning (Spring 2023)
+\* STAT 390: Statistical Methods in Engineering and Science (Winter 2023)
+\* STAT 311: Elements of Statistical Methods (Autumn 2022)
 
-Writing Samples:-
-
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
-
-Organize your courses by years, topics, or universities, however you like!
+### Duke University
+\* STA 561: Probabilistic Machine Learning (Spring 2022)
+\* ECE 586: Vector Space Methods and Applications (Fall 2021)
