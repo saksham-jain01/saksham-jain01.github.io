@@ -93,9 +93,9 @@
       items:
         - Distributional treatment effects
         - Counterfactual sampling from generative models
-    - title: Online ML
+    - title: Interactive ML
       items:
-        - Experimental design
+        - Adaptive Experimental design
         - Dynamic treatment regimes
 # - title: Other Interests
 #   type: list
