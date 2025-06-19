@@ -21,13 +21,13 @@
         #   contents:
         #     - Sub-description 1.
         #     - Sub-description 2.
-    - title: Master of Science, ML
+    - title: Master of Science, ECE (conc. ML)
       institution: Duke University, USA
       year: 2022
       description:
         - Evaluating pre-trial programs using interpretable ML matching methods for causal inference. (Master's Project)
         - Closing the domain gap - blended synthetic imagery for climate object detection.
-    - title: Bachelor of Engineering, Automation
+    - title: Bachelor of Engineering, Robotics & Automation
       institution: University of Delhi, India
       year: 2019
       description:
