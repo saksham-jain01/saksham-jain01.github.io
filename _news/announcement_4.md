@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started a Research Internship at the [RIKEN Center for Advanced Intelligence Project (AIP)](https://www.riken.jp/en/research/labs/aip/) in Tokyo, Japan
+I started a Research Internship at the [RIKEN Center for Advanced Intelligence Project (AIP)](https://www.riken.jp/en/research/labs/aip/) in Tokyo, Japan

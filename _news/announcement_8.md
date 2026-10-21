@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I won the Runner Up to the Outstanding Written Student Paper Award at WNAR 2026!
+I was the runner up in the Outstanding Written Student Paper Award at WNAR 2026!
