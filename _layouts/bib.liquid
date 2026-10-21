@@ -220,11 +220,9 @@
       {% assign scholar_user_id = site.scholar_userid | default: '' | strip %}
       {% assign scholar_article_id = entry.google_scholar_id | default: '' | strip %}
       {% if site.enable_publication_badges.google_scholar and scholar_user_id != '' and scholar_article_id != '' %}
+        {% assign entry_has_google_scholar_badge = true %}
         {% capture scholar_citations %}{% google_scholar_citations scholar_user_id scholar_article_id %}{% endcapture %}
         {% assign scholar_citations = scholar_citations | strip %}
-        {% if scholar_citations != '' and scholar_citations != 'N/A' %}
-          {% assign entry_has_google_scholar_badge = true %}
-        {% endif %}
       {% endif %}
       {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge %}
         <div class="badges">
@@ -268,12 +266,24 @@
             <a
               href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ scholar_user_id }}&citation_for_view={{ scholar_user_id }}:{{ scholar_article_id }}"
               aria-label="Google Scholar link"
+              {% if scholar_citations_cached %}
+                title="Google Scholar citations last verified {{ scholar_citations_fetched_at | date: '%b %d, %Y' }}"
+              {% elsif scholar_citations == '' or scholar_citations == 'N/A' %}
+                title="View this paper on Google Scholar; citation count currently unavailable"
+              {% endif %}
               role="button"
             >
-              <img
-                src="https://img.shields.io/badge/scholar-{{ scholar_citations }}-4285F4?logo=googlescholar&labelColor=beige"
-                alt="{{ scholar_citations }} Google Scholar citations"
-              >
+              {% if scholar_citations != '' and scholar_citations != 'N/A' %}
+                <img
+                  src="https://img.shields.io/badge/scholar-{{ scholar_citations }}-4285F4?logo=googlescholar&labelColor=beige"
+                  alt="{{ scholar_citations }} Google Scholar citations"
+                >
+              {% else %}
+                <img
+                  src="https://img.shields.io/badge/scholar-view-4285F4?logo=googlescholar&labelColor=beige"
+                  alt="View on Google Scholar"
+                >
+              {% endif %}
             </a>
           {% endif %}
         </div>

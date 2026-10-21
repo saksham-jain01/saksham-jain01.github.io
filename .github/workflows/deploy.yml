@@ -7,10 +7,14 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_plugins/**"
+      - "Gemfile"
+      - "Gemfile.lock"
       - "**.html"
       - "**.js"
       - "**.liquid"
       - "**/*.md"
+      - "**/*.bib"
       - "**.yml"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
@@ -31,10 +35,14 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_plugins/**"
+      - "Gemfile"
+      - "Gemfile.lock"
       - "**.html"
       - "**.js"
       - "**.liquid"
       - "**/*.md"
+      - "**/*.bib"
       - "**.yml"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
@@ -54,6 +62,11 @@ on:
 permissions:
   contents: write
 
+# A newer source revision must supersede an older build before it can publish.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
@@ -61,11 +74,25 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+      - name: Restore and save verified Scholar citation counts
+        uses: actions/cache@v4
+        with:
+          path: .jekyll-cache/google-scholar-citations
+          key: scholar-citations-v1-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            scholar-citations-v1-${{ github.ref_name }}-
+            scholar-citations-v1-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2.2"
           bundler-cache: true
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes imagemagick
+          convert -version
+          convert -size 1x1 xc:white /tmp/imagemagick-check.webp
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:

@@ -1,0 +1,37 @@
+# Verified Google Scholar counts used when a build cannot refresh them.
+# Live updates are retained in .jekyll-cache/google-scholar-citations/counts.json.
+
+"jD0Xz3MAAAAJ:ufrVoPGSRksC":
+  count: 3
+  fetched_at: "2026-10-21T13:54:31.337109+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:ufrVoPGSRksC
+
+"jD0Xz3MAAAAJ:UeHWp8X0CEIC":
+  count: 4
+  fetched_at: "2026-10-21T13:54:33.700568+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:UeHWp8X0CEIC
+
+"jD0Xz3MAAAAJ:IjCSPb-OGe4C":
+  count: 393
+  fetched_at: "2026-10-21T13:54:33.706480+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:IjCSPb-OGe4C
+
+"jD0Xz3MAAAAJ:u-x6o8ySG0sC":
+  count: 25
+  fetched_at: "2026-10-21T13:54:36.031361+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:u-x6o8ySG0sC
+
+"jD0Xz3MAAAAJ:2osOgNQ5qMEC":
+  count: 3
+  fetched_at: "2026-10-21T13:54:38.405582+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:2osOgNQ5qMEC
+
+"jD0Xz3MAAAAJ:qjMakFHDy7sC":
+  count: 3
+  fetched_at: "2026-10-21T13:54:40.744884+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:qjMakFHDy7sC
+
+"jD0Xz3MAAAAJ:9yKSN-GCB0IC":
+  count: 1
+  fetched_at: "2026-10-21T13:54:43.182155+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:9yKSN-GCB0IC

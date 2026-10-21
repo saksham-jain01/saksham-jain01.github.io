@@ -6,47 +6,112 @@ on:
       - master
       - main
     paths:
+      - "_pages/**"
+      - "_news/**"
+      - "_bibliography/**"
+      - "_data/**"
+      - "_layouts/**"
+      - "_includes/**"
+      - "_plugins/**"
+      - "_sass/**"
       - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
+      - "_config.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "robots.txt"
+      - ".github/workflows/broken-links.yml"
+      - ".github/workflows/deploy.yml"
   pull_request:
     branches:
       - master
       - main
     paths:
+      - "_pages/**"
+      - "_news/**"
+      - "_bibliography/**"
+      - "_data/**"
+      - "_layouts/**"
+      - "_includes/**"
+      - "_plugins/**"
+      - "_sass/**"
       - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
+      - "_config.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "robots.txt"
+      - ".github/workflows/broken-links.yml"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+    inputs:
+      check_external:
+        description: Also check external websites (may fail when they block automated requests)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   link-checker:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      JEKYLL_ENV: production
     steps:
       - uses: actions/checkout@v4
 
-      - name: Link Checker 🔗
-        uses: lycheeverse/lychee-action@v1.9.0
+      - name: Restore verified Scholar citation counts
+        uses: actions/cache/restore@v4
         with:
+          path: .jekyll-cache/google-scholar-citations
+          key: scholar-citations-v1-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            scholar-citations-v1-${{ github.ref_name }}-
+            scholar-citations-v1-
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.2"
+          bundler-cache: true
+
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes imagemagick
+          convert -version
+          convert -size 1x1 xc:white /tmp/imagemagick-check.webp
+
+      - name: Build the website
+        run: |
+          pip3 install --upgrade jupyter
+          bundle exec jekyll build --lsi
+
+      - name: Check links in the generated website 🔗
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          lycheeVersion: v0.24.2
           fail: true
-          # removed md files that include liquid tags
-          args: --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --verbose --no-progress './**/*.md' './**/*.html'
+          # Resolve local and same-site URLs against this build, including /page/ URLs.
+          # External requests are opt-in so publisher/Scholar bot blocks do not fail every push.
+          args: >-
+            ${{ inputs.check_external && '--max-retries 2 --timeout 20' || '--offline' }}
+            --root-dir '${{ github.workspace }}/_site'
+            --index-files index.html
+            --remap '^https?://saksham-jain01\.github\.io(/.*)?$ file://${{ github.workspace }}/_site$1'
+            --verbose
+            --no-progress
+            '_site/**/*.html'
+
+      - name: Upload link-check report
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: lychee/out.md
+          if-no-files-found: ignore
+          retention-days: 7
