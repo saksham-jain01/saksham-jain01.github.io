@@ -216,7 +216,16 @@
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = entry.altmetric or entry.doi or  entry.eprint or entry.pmid or entry.isbn %}
       {% assign entry_has_dimensions_badge = entry.dimensions or entry.doi or entry.pmid %}
-      {% assign entry_has_google_scholar_badge = entry.google_scholar_id %}
+      {% assign entry_has_google_scholar_badge = false %}
+      {% assign scholar_user_id = site.scholar_userid | default: '' | strip %}
+      {% assign scholar_article_id = entry.google_scholar_id | default: '' | strip %}
+      {% if site.enable_publication_badges.google_scholar and scholar_user_id != '' and scholar_article_id != '' %}
+        {% capture scholar_citations %}{% google_scholar_citations scholar_user_id scholar_article_id %}{% endcapture %}
+        {% assign scholar_citations = scholar_citations | strip %}
+        {% if scholar_citations != '' and scholar_citations != 'N/A' %}
+          {% assign entry_has_google_scholar_badge = true %}
+        {% endif %}
+      {% endif %}
       {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge %}
         <div class="badges">
           {% if site.enable_publication_badges.altmetric and entry_has_altmetric_badge %}
@@ -257,13 +266,13 @@
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
             <a
-              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}"
+              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ scholar_user_id }}&citation_for_view={{ scholar_user_id }}:{{ scholar_article_id }}"
               aria-label="Google Scholar link"
               role="button"
             >
               <img
-                src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
-                alt="{% google_scholar_citations site.scholar_userid entry.google_scholar_id %} Google Scholar citations"
+                src="https://img.shields.io/badge/scholar-{{ scholar_citations }}-4285F4?logo=googlescholar&labelColor=beige"
+                alt="{{ scholar_citations }} Google Scholar citations"
               >
             </a>
           {% endif %}
