@@ -219,6 +219,9 @@
       {% assign entry_has_google_scholar_badge = false %}
       {% assign scholar_user_id = site.scholar_userid | default: '' | strip %}
       {% assign scholar_article_id = entry.google_scholar_id | default: '' | strip %}
+      {% if scholar_article_id == '' %}
+        {% assign scholar_article_id = site.data.google_scholar_ids[entry.key] | default: '' | strip %}
+      {% endif %}
       {% if site.enable_publication_badges.google_scholar and scholar_user_id != '' and scholar_article_id != '' %}
         {% assign entry_has_google_scholar_badge = true %}
         {% capture scholar_citations %}{% google_scholar_citations scholar_user_id scholar_article_id %}{% endcapture %}

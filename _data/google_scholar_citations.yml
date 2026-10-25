@@ -1,6 +1,11 @@
 # Verified Google Scholar counts used when a build cannot refresh them.
 # Live updates are retained in .jekyll-cache/google-scholar-citations/counts.json.
 
+"jD0Xz3MAAAAJ:3fE2CSJIrl8C":
+  count: 3
+  fetched_at: "2026-10-21T14:38:23.178588+00:00"
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jD0Xz3MAAAAJ&citation_for_view=jD0Xz3MAAAAJ:3fE2CSJIrl8C
+
 "jD0Xz3MAAAAJ:ufrVoPGSRksC":
   count: 3
   fetched_at: "2026-10-21T13:54:31.337109+00:00"
