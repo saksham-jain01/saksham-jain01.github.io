@@ -14,7 +14,7 @@
       year: 2027 (Expected)
       description:
         - Conditional distributional treatment effects - doubly robust estimation and testing
-        - Longitudinal causal inference with multiple continuous exposures - an application to proteomics (Working Paper)
+        - Longitudinal causal inference with multiple continuous exposures (ongoing)
         # - A-optimal design of instruments for indirect online experimentation. (Working Paper)
         # - title: Description 3.
         #   contents:
@@ -26,7 +26,7 @@
       description:
         - Evaluating pre-trial programs using interpretable ML matching methods for causal inference (Master's Project)
         - Closing the domain gap - blended synthetic imagery for climate object detection
-    - title: BE, Robotics & Automation
+    - title: BE, (Robotics & Automation)
       institution: University of Delhi, India
       year: 2019
       description:
@@ -39,7 +39,7 @@
       institution: RIKEN-AIP and the University of Tokyo
       year: Jun'25 - Sep'25
       description:
-        - State evolution for gradient descent in finite-width multi-layer neural networks
+        - State evolution for gradient descent dynamics in finite-width multi-layer neural networks
     - title: Applied Scientist II Intern
       institution: Amazon Science
       year: Jun'24 - Sep'24
