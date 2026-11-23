@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-New [preprint](https://arxiv.org/abs/2603.16829) (work with Alex) out on arXiv!
+New [preprint](https://arxiv.org/abs/2603.16829) (joint work with [Alex Luedtke](https://alexluedtke.com/)) is out on arXiv!

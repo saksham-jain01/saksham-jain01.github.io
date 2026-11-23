@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2026-06-16 16:25:00-0400
+date: 2026-05-20 16:25:00-0400
 inline: true
 related_posts: false
 ---
 
-I was the runner up in the Outstanding Written Student Paper Award at WNAR 2026!
+I won the Student Research Award at [NESS 2026](https://symposium.nestat.org/awards.html)!

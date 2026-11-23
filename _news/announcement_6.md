@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I will present a poster on conditional distributional treatment effects at [ACIC](https://sci-info.org/2026-meeting-2/) on May 12, 2026
+I will present a poster on conditional distributional treatment effects at [ACIC](https://sci-info.org/2026-meeting-2/) on May 12, 2026.

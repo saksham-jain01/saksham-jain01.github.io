@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2026-05-20 16:25:00-0400
+date: 2026-05-30 16:25:00-0400
 inline: true
 related_posts: false
 ---
 
-I won the Student Research Award at NESS 2026!
+Our paper [Conditional Distributional Treatment Effects: Doubly Robust Estimation and Testing](https://openreview.net/forum?id=LfUXGnwVzw) (joint work with [Alex Luedtke](https://alexluedtke.com/)) has been accepted to the [International Conference on Machine Learning (2026)](https://icml.cc/Conferences/2026)!
